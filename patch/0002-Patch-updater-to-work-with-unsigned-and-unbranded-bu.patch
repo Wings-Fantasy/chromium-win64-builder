@@ -1,4 +1,4 @@
-From c4d9f816fcfa279248753584184c5ca163ac6299 Mon Sep 17 00:00:00 2001
+From b8e5be76be19443af3b1fac2150b28bb036f36dd Mon Sep 17 00:00:00 2001
 From: Hibiki Tachibana <57486057+Hibbiki@users.noreply.github.com>
 Date: Wed, 12 Jun 2024 02:14:41 +0200
 Subject: [PATCH 2/4] Patch updater to work with unsigned and unbranded builds
@@ -11,10 +11,10 @@ Signed-off-by: Hibiki Tachibana <57486057+Hibbiki@users.noreply.github.com>
  3 files changed, 17 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/install_static/chromium_install_modes.h b/chrome/install_static/chromium_install_modes.h
-index f29a8228fe611..c976c66bd9c29 100644
+index a6d969df56d13..94f17357b8eb1 100644
 --- a/chrome/install_static/chromium_install_modes.h
 +++ b/chrome/install_static/chromium_install_modes.h
-@@ -43,8 +43,7 @@ inline constexpr auto kInstallModes = std::to_array<InstallConstants>({
+@@ -52,8 +52,7 @@ inline constexpr auto kInstallModes = std::to_array<InstallConstants>({
          .install_suffix =
              L"",  // Empty install_suffix for the primary install mode.
          .logo_suffix = L"",  // No logo suffix for the primary install mode.
@@ -89,5 +89,5 @@ index ef2eb378a8c68..97d24bbff803b 100644
  
  // Shows a splash screen "Initializing...".
 -- 
-2.50.1.windows.1
+2.55.0.windows.5
 

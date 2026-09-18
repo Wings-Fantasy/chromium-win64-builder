@@ -1,4 +1,4 @@
-From 517eca9a58bf4237b5c3458b2a96594896be2260 Mon Sep 17 00:00:00 2001
+From ffbbcc9674263b99ee8d69628d38228ade001b53 Mon Sep 17 00:00:00 2001
 From: Hibiki Tachibana <57486057+Hibbiki@users.noreply.github.com>
 Date: Thu, 5 Aug 2021 02:09:34 +0200
 Subject: [PATCH 1/4] Patch installer to close previous browser instance on
@@ -10,7 +10,7 @@ Signed-off-by: Hibiki Tachibana <57486057+Hibbiki@users.noreply.github.com>
  1 file changed, 48 insertions(+)
 
 diff --git a/chrome/installer/setup/install_worker.cc b/chrome/installer/setup/install_worker.cc
-index bf819dec3bda5..7faec20a1a95a 100644
+index b197e7addd13c..532f440892e1e 100644
 --- a/chrome/installer/setup/install_worker.cc
 +++ b/chrome/installer/setup/install_worker.cc
 @@ -30,6 +30,8 @@
@@ -30,7 +30,7 @@ index bf819dec3bda5..7faec20a1a95a 100644
  #include "chrome/install_static/buildflags.h"
  #include "chrome/install_static/install_details.h"
  #include "chrome/install_static/install_modes.h"
-@@ -266,6 +269,46 @@ void AddDeleteUninstallEntryForMSIWorkItems(
+@@ -267,6 +270,46 @@ void AddDeleteUninstallEntryForMSIWorkItems(
    delete_reg_key->set_best_effort(true);
  }
  
@@ -77,7 +77,7 @@ index bf819dec3bda5..7faec20a1a95a 100644
  // Adds Chrome specific install work items to |install_list|.
  void AddChromeWorkItems(const InstallParams& install_params,
                          WorkItemList* install_list) {
-@@ -277,6 +320,11 @@ void AddChromeWorkItems(const InstallParams& install_params,
+@@ -278,6 +321,11 @@ void AddChromeWorkItems(const InstallParams& install_params,
  
    const base::FilePath& target_path = installer_state.target_path();
  
@@ -90,5 +90,5 @@ index bf819dec3bda5..7faec20a1a95a 100644
      // TODO(crbug.com/441478433): Delete this cleanup some time in 2027.
      // Delete the archive from an existing install to save some disk space.
 -- 
-2.50.1.windows.1
+2.55.0.windows.5
 
