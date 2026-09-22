@@ -1,3 +1,4 @@
+enable_playready = true
 enable_platform_ac3_eac3_audio = true
 enable_platform_hevc = true
 enable_iterator_debugging = false
